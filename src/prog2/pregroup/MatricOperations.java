@@ -1,10 +1,12 @@
 package prog2.pregroup;
 
+import prog2.pregroup.Matrices;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
-class MatricOperations {
+class MatrixOperations {
     public static void main(String[] args) {
-
         int ch; // for storing user's choice
         double ar; // for storing area
         // variable for storing various dimensions of
@@ -13,53 +15,78 @@ class MatricOperations {
         int side;
         int radius;
         Scanner sc = new Scanner(System.in); // creating object of Scanner class
-        // displaying the menu
-        System.out.println("1: Enter Elements of Matrix A");
-        System.out.println("2: Enter elements of Matrix B");
-        System.out.println("3: Add Matrix A and Matrix B");
-        System.out.println("4: Subtract Matrix A and Matrix b");
-        System.out.println("5: Multiply Matrix A and Matrix B");
-        System.out.println("6: Display transpose of Matrix A and Matrix B");
-        System.out.println("7: Display the determinants of Matrix A and Matrix B \n if Matrices A and B" +
-                "if Matrices A and B are square Matrix");
-        System.out.println("8: Quit");
-        lp:
-        while (true) // labeling the while loop
-        {
+
+        //Initializes matrix
+        Matrices.initializeMatrix();
+
+        lp: // labeling the while loop
+        while (true) {
+            showMenu(); //Displays the menu
+
             System.out.print("Make your choice: ");
             ch = sc.nextInt(); // reading user's choice
             switch (ch) {
                 case 1:
-                    System.out.println("WALA PA");
+                    System.out.println("\n\n");
+                    Matrices.initializeMatrix();
+                    sc.nextLine();
                     break;
                 case 2:
-                    System.out.println("WALA PA");
+                    System.out.println("\n\n");
+                    Matrices.showMatrices();
+                    sc.nextLine();
                     break;
                 case 3:
-                    System.out.println("WALA PA");
+                    System.out.println("\n\n");
+                    Matrices.changeMatrix1Value();
+                    sc.nextLine();
                     break;
                 case 4:
-                    System.out.println("WALA PA");
+                    System.out.println("\n\n");
+                    Matrices.changeMatrix2Value();
+                    sc.nextLine();
                     break;
                 case 5:
-                    System.out.println("WALA PA");
-
+                    System.out.println("\n\n");
+                    Matrices.addMatrices();
+                    sc.nextLine();
                     break;
                 case 6:
-                    System.out.println("WALA PA");
-
+                    System.out.println("\n\n");
+                    Matrices.subtractMatrices();
+                    sc.nextLine();
                     break;
                 case 7:
                     System.out.println("WALA PA");
                 case 8:
+                    System.out.println("WALA PA");
+                    break;
+                case 9:
+                    System.out.println("WALA PA");
+                    break;
+                case 0:
                     break lp;
                 default:
-                    System.out.println("Invalid choice! Please make a valid choice. \n\n");
+                    System.out.println("Invalid choice! Please make a valid choice.");
             }
         }
+    }
 
-
+    public static void showMenu() {
+        System.out.println("\n\n\n\n\n");
+        System.out.println("1: Change size of matrices");
+        System.out.println("2: Show current matrices");
+        System.out.println("3: Enter elements of Matrix A");
+        System.out.println("4: Enter elements of Matrix B");
+        System.out.println("5: Add Matrix A and Matrix B");
+        System.out.println("6: Subtract Matrix A and Matrix b");
+        System.out.println("7: Multiply Matrix A and Matrix B");
+        System.out.println("8: Display transpose of Matrix A and Matrix B");
+        System.out.println("9: Display the determinants of Matrix A and Matrix B \n if Matrices A and B" +
+                "if Matrices A and B are square Matrix");
+        System.out.println("0: Quit");
     }
 }
 
+//This is my attempt to help. Everything is pretty scuffed, but I hope it can at least decrease the burden for you guys.
 

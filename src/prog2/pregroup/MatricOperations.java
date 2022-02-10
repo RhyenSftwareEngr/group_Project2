@@ -1,74 +1,25 @@
 package prog2.pregroup;
 
-import prog2.pregroup.Matrices;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 class MatrixOperations {
+    public static Scanner sc = new Scanner(System.in); // creating object of Scanner class
+
     public static void main(String[] args) {
-        int ch; // for storing user's choice
         double ar; // for storing area
         // variable for storing various dimensions of
         // different geometrical figure
         int length, breadth, height, diagonal1, diagonal2;
         int side;
         int radius;
-        Scanner sc = new Scanner(System.in); // creating object of Scanner class
+
 
         //Initializes matrix
         Matrices.initializeMatrix();
 
-        lp: // labeling the while loop
         while (true) {
             showMenu(); //Displays the menu
-
             System.out.print("Make your choice: ");
-            ch = sc.nextInt(); // reading user's choice
-            switch (ch) {
-                case 1:
-                    System.out.println("\n\n");
-                    Matrices.initializeMatrix();
-                    sc.nextLine();
-                    break;
-                case 2:
-                    System.out.println("\n\n");
-                    Matrices.showMatrices();
-                    sc.nextLine();
-                    break;
-                case 3:
-                    System.out.println("\n\n");
-                    Matrices.changeMatrix1Value();
-                    sc.nextLine();
-                    break;
-                case 4:
-                    System.out.println("\n\n");
-                    Matrices.changeMatrix2Value();
-                    sc.nextLine();
-                    break;
-                case 5:
-                    System.out.println("\n\n");
-                    Matrices.addMatrices();
-                    sc.nextLine();
-                    break;
-                case 6:
-                    System.out.println("\n\n");
-                    Matrices.subtractMatrices();
-                    sc.nextLine();
-                    break;
-                case 7:
-                    System.out.println("WALA PA");
-                case 8:
-                    System.out.println("WALA PA");
-                    break;
-                case 9:
-                    System.out.println("WALA PA");
-                    break;
-                case 0:
-                    break lp;
-                default:
-                    System.out.println("Invalid choice! Please make a valid choice.");
-            }
         }
     }
 
@@ -85,6 +36,55 @@ class MatrixOperations {
         System.out.println("9: Display the determinants of Matrix A and Matrix B \n if Matrices A and B" +
                 "if Matrices A and B are square Matrix");
         System.out.println("0: Quit");
+
+        int ch = sc.nextInt(); // reading user's choice
+        switch (ch) {
+            case 1:
+                System.out.println("\n\n");
+                Matrices.initializeMatrix();
+                sc.nextLine();
+                break;
+            case 2:
+                System.out.println("\n\n");
+                Matrices.showMatrices();
+                sc.nextLine();
+                break;
+            case 3:
+                System.out.println("\n\n");
+                Matrices.changeMatrix1Value();
+                sc.nextLine();
+                break;
+            case 4:
+                System.out.println("\n\n");
+                Matrices.changeMatrix2Value();
+                sc.nextLine();
+                break;
+            case 5:
+                System.out.println("\n\n");
+                Matrices.addMatrices();
+                sc.nextLine();
+                break;
+            case 6:
+                System.out.println("\n\n");
+                Matrices.subtractMatrices();
+                sc.nextLine();
+                break;
+            case 7:
+                System.out.println("\n\n");
+                Matrices.multiplyMatrices();
+                sc.nextLine();
+                break;
+            case 8:
+                System.out.println("WALA PA");
+                break;
+            case 9:
+                System.out.println("WALA PA");
+                break;
+            case 0:
+                System.exit(0);
+            default:
+                System.out.println("Invalid choice! Please make a valid choice.");
+        }
     }
 }
 

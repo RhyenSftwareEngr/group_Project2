@@ -110,6 +110,30 @@ public class Matrices {
         System.out.println("The difference is: ");
         showMatrix("Result", res);
     }
+
+    //Multiply matrix 1 and 2 and prints the result
+    public static void multiplyMatrices() {
+        if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
+            System.out.println("The two matrices should have the same size.");
+            return;
+        }
+
+        int[][] res = new int[matrix1.length][matrix2[0].length];
+
+        for (int i = 0; i < matrix1.length; i++)
+        {
+            for (int j = 0; j < matrix2[0].length; j++)
+            {
+                for (int k = 0; k < matrix1[0].length; k++)
+                {
+                    res[i][j] =  matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        System.out.println("The product is: ");
+        showMatrix("Result", res);
+    }
 }
 
 

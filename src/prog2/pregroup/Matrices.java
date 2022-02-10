@@ -113,8 +113,8 @@ public class Matrices {
 
     //Multiply matrix 1 and 2 and prints the result
     public static void multiplyMatrices() {
-        if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
-            System.out.println("The two matrices should have the same size.");
+        if (!(matrix1[0].length == matrix2.length)) {
+            System.out.println("The columns of the first matrix should be equal to the number of rows in the second matrix");
             return;
         }
 
@@ -124,9 +124,9 @@ public class Matrices {
         {
             for (int j = 0; j < matrix2[0].length; j++)
             {
-                for (int k = 0; k < matrix1[0].length; k++)
+                for (int k = 0; k < matrix2.length; k++)
                 {
-                    res[i][j] =  matrix1[i][k] * matrix2[k][j];
+                    res[i][j] +=  matrix1[i][k] * matrix2[k][j];
                 }
             }
         }

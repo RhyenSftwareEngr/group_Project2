@@ -134,6 +134,32 @@ public class Matrices {
         System.out.println("The product is: ");
         showMatrix("Result", res);
     }
+
+    //Transposes matrix 1 and 2 and prints the result
+    public static void transposeMatrices() {
+
+        System.out.println("The transpose of Matrix A is: ");
+        showMatrix("Result", transposeMatrix(matrix1));
+
+        System.out.println("The transpose of Matrix B is: ");
+        showMatrix("Result", transposeMatrix(matrix2));
+    }
+
+    //Transposes matrix
+    static int[][] transposeMatrix(int[][] matrix) {
+
+        int[][] res = new int[matrix.length][matrix.length];
+
+        for (int i = 0; i < matrix.length; i++)
+        {
+            for (int j = 0; j < matrix.length; j++)
+            {
+                res[j][i] =  matrix[i][j];
+            }
+        }
+        return res;
+
+    }
 }
 
 

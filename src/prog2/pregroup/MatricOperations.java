@@ -75,7 +75,9 @@ class MatrixOperations {
                 sc.nextLine();
                 break;
             case 8:
-                System.out.println("WALA PA");
+                System.out.println("\n\n");
+                Matrices.transposeMatrices();
+                sc.nextLine();
                 break;
             case 9:
                 System.out.println("WALA PA");

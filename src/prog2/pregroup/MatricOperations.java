@@ -80,7 +80,8 @@ class MatrixOperations {
                 sc.nextLine();
                 break;
             case 9:
-                System.out.println("WALA PA");
+                System.out.println("\n\n");
+                Matrices.determinantOfMatrices();
                 break;
             case 0:
                 System.exit(0);

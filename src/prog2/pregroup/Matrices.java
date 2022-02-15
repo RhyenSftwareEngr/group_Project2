@@ -1,5 +1,6 @@
 package prog2.pregroup;
 
+import java.util.Arrays;
 import java.util.Scanner;
 public class Matrices {
     private static int[][] matrix1;
@@ -11,16 +12,25 @@ public class Matrices {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Enter the number of rows of matrix 1: ");
-        r = scan.nextInt();
+        r = Integer.parseInt(scan.nextLine());
         System.out.print("Enter the number of columns of matrix 1: ");
-        c = scan.nextInt();
+        c = Integer.parseInt(scan.nextLine());
         matrix1 = new int[r][c];
 
         System.out.print("Enter the number of rows of matrix 2: ");
-        r = scan.nextInt();
+        r = Integer.parseInt(scan.nextLine());
         System.out.print("Enter the number of columns of matrix 2: ");
-        c = scan.nextInt();
+        c = Integer.parseInt(scan.nextLine());
         matrix2 = new int[r][c];
+        //Validation
+        if(matrix1.length != matrix2.length && matrix1[0].length != matrix2[0].length) {
+               System.out.println("Does not have the same rows and columns! Pls input again");
+             initializeMatrix();
+           }
+
+
+
+
     }
 
     //Shows both of the matrices and its current values

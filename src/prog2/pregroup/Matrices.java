@@ -22,15 +22,6 @@ public class Matrices {
         System.out.print("Enter the number of columns of matrix 2: ");
         c = Integer.parseInt(scan.nextLine());
         matrix2 = new int[r][c];
-        //Validation
-        if(matrix1.length != matrix2.length && matrix1[0].length != matrix2[0].length) {
-               System.out.println("Does not have the same rows and columns! Pls input again");
-             initializeMatrix();
-           }
-
-
-
-
     }
 
     //Shows both of the matrices and its current values
@@ -88,7 +79,8 @@ public class Matrices {
     //Adds matrix 1 and 2 and prints the result
     public static void addMatrices() {
         if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
-            System.out.println("The two matrices should have the same size.");
+            System.out.println("The two matrices should have the same size. \n Pls input again");
+            initializeMatrix();
             return;
         }
 

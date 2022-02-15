@@ -1,6 +1,5 @@
 package prog2.pregroup;
 
-import java.util.Arrays;
 import java.util.Scanner;
 public class Matrices {
     private static int[][] matrix1;
@@ -10,7 +9,6 @@ public class Matrices {
     //Method responsible for changing the sizes of the matrices
     public static void initializeMatrix() {
         Scanner scan = new Scanner(System.in);
-
         System.out.print("Enter the number of rows of matrix 1: ");
         r = Integer.parseInt(scan.nextLine());
         System.out.print("Enter the number of columns of matrix 1: ");
@@ -32,18 +30,18 @@ public class Matrices {
 
     //Shows the value of a given matrix
     private static void showMatrix(String mName, int[][] matrix) {
-        System.out.println("Matrix " + mName +": " + matrix.length + " x " + matrix[0].length);
+        System.out.println("Matrix " + mName + ": " + matrix.length + " x " + matrix[0].length);
         System.out.print("[");
-        for (int x=0; x<matrix.length; x++) {
+        for (int x = 0; x < matrix.length; x++) {
             System.out.print("[");
-            for (int y=0; y<matrix[x].length; y++) {
+            for (int y = 0; y < matrix[x].length; y++) {
                 if (y == 0) {
                     System.out.print(matrix[x][y]);
                 } else {
                     System.out.print(", " + matrix[x][y]);
                 }
             }
-            if (x == matrix.length-1) {
+            if (x == matrix.length - 1) {
                 System.out.print("]");
             } else {
                 System.out.print("],\n");
@@ -79,8 +77,7 @@ public class Matrices {
     //Adds matrix 1 and 2 and prints the result
     public static void addMatrices() {
         if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
-            System.out.println("The two matrices should have the same size. \n Pls input again");
-            initializeMatrix();
+            System.out.println("The two matrices should have the same size. \n Please go to Menu 1 ti fix it!");
             return;
         }
 
@@ -98,7 +95,7 @@ public class Matrices {
     //Subtracts matrix 1 and 2 and prints the result
     public static void subtractMatrices() {
         if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
-            System.out.println("The two matrices should have the same size.");
+            System.out.println("The two matrices should have the same size. \n Please go to Menu 1 ti fix it!");
             return;
         }
 
@@ -116,19 +113,17 @@ public class Matrices {
     //Multiply matrix 1 and 2 and prints the result
     public static void multiplyMatrices() {
         if (!(matrix1[0].length == matrix2.length)) {
-            System.out.println("The columns of the first matrix should be equal to the number of rows in the second matrix");
+            System.out.println("The columns of the first matrix should be equal to the number of rows in the second " +
+                    "matrix \n Please go to Menu 1 ti fix it!");
             return;
         }
 
         int[][] res = new int[matrix1.length][matrix2[0].length];
 
-        for (int i = 0; i < matrix1.length; i++)
-        {
-            for (int j = 0; j < matrix2[0].length; j++)
-            {
-                for (int k = 0; k < matrix2.length; k++)
-                {
-                    res[i][j] +=  matrix1[i][k] * matrix2[k][j];
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix2[0].length; j++) {
+                for (int k = 0; k < matrix2.length; k++) {
+                    res[i][j] += matrix1[i][k] * matrix2[k][j];
                 }
             }
         }
@@ -152,24 +147,27 @@ public class Matrices {
 
         int[][] res = new int[matrix.length][matrix.length];
 
-        for (int i = 0; i < matrix.length; i++)
-        {
-            for (int j = 0; j < matrix.length; j++)
-            {
-                res[j][i] =  matrix[i][j];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                res[j][i] = matrix[i][j];
             }
         }
         return res;
 
     }
 
-    public static void determinantOfMatrices(){
-        System.out.println("Determinant of Matrix 1: " + determinantOfMatrix1(matrix1));
-        System.out.println("Determinant of Matrix 2: " + determinantOfMatrix2(matrix2));
+    public static void determinantOfMatrices() {
+        if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
+            System.out.print("Must be defined for square matrices only! \n Please go to Menu 1 to fix it!:\n");
+
+        } else {
+            System.out.println("Determinant of Matrix 1: " + determinantOfMatrix1(matrix1));
+            System.out.println("Determinant of Matrix 2: " + determinantOfMatrix2(matrix2));
+        }
     }
 
     //Determinant of Matrix 1
-    public static int determinantOfMatrix1 (int[][] matrix1) {
+    public static int determinantOfMatrix1(int[][] matrix1) {
         int[][] temporary;
         int result = 0;
         if (matrix1.length == 1) {
@@ -192,13 +190,13 @@ public class Matrices {
                     }
                 }
             }
-            result += matrix1[0][i] * Math.pow (-1, i) * determinantOfMatrix1 (temporary);
+            result += matrix1[0][i] * Math.pow(-1, i) * determinantOfMatrix1(temporary);
         }
         return (result);
     }
 
     //Determinant of Matrix 2
-    public static int determinantOfMatrix2 (int[][] matrix2) {
+    public static int determinantOfMatrix2(int[][] matrix2) {
         int[][] temporary;
         int result = 0;
         if (matrix2.length == 1) {
@@ -221,13 +219,8 @@ public class Matrices {
                     }
                 }
             }
-            result += matrix2[0][i] * Math.pow (-1, i) * determinantOfMatrix1 (temporary);
+            result += matrix2[0][i] * Math.pow(-1, i) * determinantOfMatrix1(temporary);
         }
         return (result);
     }
-
-
 }
-
-
-// MAIN CLASS

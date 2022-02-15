@@ -6,21 +6,28 @@ class MatrixOperations {
     public static Scanner sc = new Scanner(System.in); // creating object of Scanner class
 
     public static void main(String[] args) {
-        double ar; // for storing area
-        // variable for storing various dimensions of
-        // different geometrical figure
-        int length, breadth, height, diagonal1, diagonal2;
-        int side;
-        int radius;
-
-
-        //Initializes matrix
+        showIntroduction();
+        sc.nextLine();
         Matrices.initializeMatrix();
 
         while (true) {
             showMenu(); //Displays the menu
             System.out.print("Make your choice: ");
         }
+    }
+
+    public static void showIntroduction() {
+        System.out.println("\n\n\n");
+        System.out.println("College of Information and Computing Sciences");
+        System.out.println(" Saint Louis University");
+        System.out.println(" Baguio City ");
+        System.out.println("---------------------------------------------");
+        System.out.println("\n");
+        System.out.println(" Group 4 ");
+        System.out.println(" Developers: \n Aliyah Javier \n Andrei Dagatay \n Eduard Tadeo" +
+                "\n Lawrence Miguel \n Rhyen Natividad");
+        System.out.println("\n");
+        System.out.print("Please press a key to start the program...");
     }
 
     public static void showMenu() {
@@ -100,6 +107,7 @@ class MatrixOperations {
                 Matrices.determinantOfMatrices();
                 System.out.print("press enter to continue...");
                 sc.nextLine();
+                sc.nextLine();
                 break;
             case 10:
                 System.out.println("\nThank your for using our program! Feel free to come back.");
@@ -112,3 +120,4 @@ class MatrixOperations {
 
 //This is my attempt to help. Everything is pretty scuffed, but I hope it can at least decrease the burden for you guys.
 
+//No, you've done enough my friend

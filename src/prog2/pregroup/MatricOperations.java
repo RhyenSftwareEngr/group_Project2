@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 class MatrixOperations {
     public static Scanner sc = new Scanner(System.in); // creating object of Scanner class
-
+    static  String smile = "\uD83D\uDE0A";
+    static String love = "\uD83D\uDC9C";
+    static String woman = "\uD83D\uDC67";
+    static String man = "\uD83D\uDC66";
     public static void main(String[] args) {
         showIntroduction();
         sc.nextLine();
@@ -17,15 +20,18 @@ class MatrixOperations {
     }
 
     public static void showIntroduction() {
-        System.out.println("\n\n\n");
+        System.out.println("\n");
         System.out.println("College of Information and Computing Sciences");
         System.out.println(" Saint Louis University");
         System.out.println(" Baguio City ");
         System.out.println("---------------------------------------------");
+        for(int index=0; index < 10; index++){
+            System.out.print(smile + love + smile + "");
+        }
         System.out.println("\n");
-        System.out.println(" Group 4 ");
-        System.out.println(" Developers: \n Aliyah Javier \n Andrei Dagatay \n Eduard Tadeo" +
-                "\n Lawrence Miguel \n Rhyen Natividad");
+        System.out.println(" Group 4 "+ smile);
+        System.out.println(" Developers: \n Aliyah Javier" + woman +" \n Andrei Dagatay" + man + "\n Eduard Tadeo" + man
+                + "\n Lawrence Miguel" + man + "\n Rhyen Natividad" + man);
         System.out.println("\n");
         System.out.print("Please press a key to start the program...");
     }
@@ -50,7 +56,7 @@ class MatrixOperations {
                 System.out.println("\n\n");
                 Matrices.initializeMatrix();
                 sc.nextLine();
-                System.out.print("press enter to continue...");
+                System.out.print("press enter to continue..." + smile);
                 sc.nextLine();
                 break;
             case 2:
@@ -111,6 +117,9 @@ class MatrixOperations {
                 break;
             case 10:
                 System.out.println("\nThank your for using our program! Feel free to come back.");
+                for(int index=0; index < 35; index++){
+                    System.out.print(smile + "");
+                }
                 System.exit(0);
             default:
                 System.err.println("Invalid choice! Please make a valid choice.");

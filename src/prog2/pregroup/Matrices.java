@@ -76,6 +76,7 @@ public class Matrices {
 
     //Adds matrix 1 and 2 and prints the result
     public static void addMatrices() {
+        //Validation
         if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
             System.out.println("The two matrices should have the same size. \n Please go to Menu 1 ti fix it!");
             return;
@@ -94,6 +95,7 @@ public class Matrices {
 
     //Subtracts matrix 1 and 2 and prints the result
     public static void subtractMatrices() {
+        //Validation
         if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
             System.out.println("The two matrices should have the same size. \n Please go to Menu 1 ti fix it!");
             return;
@@ -112,6 +114,7 @@ public class Matrices {
 
     //Multiply matrix 1 and 2 and prints the result
     public static void multiplyMatrices() {
+        //Validation
         if (!(matrix1[0].length == matrix2.length)) {
             System.out.println("The columns of the first matrix should be equal to the number of rows in the second " +
                     "matrix \n Please go to Menu 1 ti fix it!");
@@ -157,6 +160,7 @@ public class Matrices {
     }
 
     public static void determinantOfMatrices() {
+        //Validation
         if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
             System.out.print("Must be defined for square matrices only! \n Please go to Menu 1 to fix it!:\n");
 

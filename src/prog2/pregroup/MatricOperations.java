@@ -30,7 +30,7 @@ class MatrixOperations {
         }
         System.out.println("\n");
         System.out.println(" Group 4 "+ smile);
-        System.out.println(" Developers: \n Aliyah Javier" + woman +" \n Andrei Dagatay" + man + "\n Eduard Tadeo" + man
+        System.out.println(" Developers: \n Aliyah Javier" + woman + "\n Eduard Tadeo" + man
                 + "\n Lawrence Miguel" + man + "\n Rhyen Natividad" + man);
         System.out.println("\n");
         System.out.print("Please press a key to start the program...");

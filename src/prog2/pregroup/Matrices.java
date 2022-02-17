@@ -161,17 +161,17 @@ public class Matrices {
 
     public static void determinantOfMatrices() {
         //Validation
-        if (!(matrix1.length == matrix2.length && matrix1[0].length == matrix2[0].length)) {
+        if (!(matrix1.length == matrix1[0].length && matrix2.length == matrix2[0].length)) {
             System.out.print("Must be defined for square matrices only! \n Please go to Menu 1 to fix it!:\n");
 
         } else {
-            System.out.println("Determinant of Matrix 1: " + determinantOfMatrix1(matrix1));
-            System.out.println("Determinant of Matrix 2: " + determinantOfMatrix2(matrix2));
+            System.out.println("Determinant of Matrix 1: " + determinantOfMatrix(matrix1));
+            System.out.println("Determinant of Matrix 2: " + determinantOfMatrix(matrix2));
         }
     }
 
     //Determinant of Matrix 1
-    public static int determinantOfMatrix1(int[][] matrix1) {
+    public static int determinantOfMatrix(int[][] matrix1) {
         int[][] temporary;
         int result = 0;
         if (matrix1.length == 1) {
@@ -194,37 +194,9 @@ public class Matrices {
                     }
                 }
             }
-            result += matrix1[0][i] * Math.pow(-1, i) * determinantOfMatrix1(temporary);
+            result += matrix1[0][i] * Math.pow(-1, i) * determinantOfMatrix(temporary);
         }
         return (result);
     }
 
-    //Determinant of Matrix 2
-    public static int determinantOfMatrix2(int[][] matrix2) {
-        int[][] temporary;
-        int result = 0;
-        if (matrix2.length == 1) {
-            result = matrix2[0][0];
-            return (result);
-        }
-        if (matrix2.length == 2) {
-            result = ((matrix2[0][0] * matrix2[1][1]) - (matrix2[0][1] * matrix2[1][0]));
-            return (result);
-        }
-        for (int i = 0; i < matrix2[0].length; i++) {
-            temporary = new int[matrix2.length - 1][matrix2[0].length - 1];
-
-            for (int j = 1; j < matrix2.length; j++) {
-                for (int k = 0; k < matrix2[0].length; k++) {
-                    if (k < i) {
-                        temporary[j - 1][k] = matrix2[j][k];
-                    } else if (k > i) {
-                        temporary[j - 1][k - 1] = matrix2[j][k];
-                    }
-                }
-            }
-            result += matrix2[0][i] * Math.pow(-1, i) * determinantOfMatrix1(temporary);
-        }
-        return (result);
-    }
 }

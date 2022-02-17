@@ -50,7 +50,8 @@ class MatrixOperations {
                 " if Matrices A and B are square Matrix");
         System.out.println("10: Quit");
 
-        int ch = sc.nextInt(); // reading user's choice
+
+        int ch = Integer.parseInt(sc.next()); // reading user's choice
         switch (ch) {
             case 1:
                 System.out.println("\n\n");
